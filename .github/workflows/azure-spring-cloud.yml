@@ -21,8 +21,6 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - name: Install Azure Spring Cloud extension
         run: az extension add -y --name spring-cloud
-      - name: Pwd
-        run: pwd
       - name: Deploy to Azure Spring Cloud
         run:
           az spring-cloud app deploy --resource-group spring-piggy --service spring-cloud-piggy --name gateway --jar-path gateway/build/libs/gateway-0.0.1-SNAPSHOT.jar
