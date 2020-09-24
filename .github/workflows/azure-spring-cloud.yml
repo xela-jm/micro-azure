@@ -16,9 +16,9 @@ jobs:
           cd gateway
           gradle build
       - name: Build with Gradle Account Service
-          run: |
-            cd account-service
-            gradle build
+        run: |
+          cd account-service
+          gradle build
       - name: Login to Azure Spring Cloud
         uses: azure/login@v1
         with:
