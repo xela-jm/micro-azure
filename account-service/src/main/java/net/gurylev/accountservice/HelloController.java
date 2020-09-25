@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
+    @Value("${application.message:Not configured by a Spring Cloud Server}")
+    private String message;
+
     @GetMapping("/hello")
     public String hello() {
-        return "Hello" + '\n';
+        return message + '\n';
     }
 }
